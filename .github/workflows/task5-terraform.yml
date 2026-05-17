@@ -13,13 +13,12 @@ jobs:
       - name: Zalogowanie do chmury Azure
         # Używamy oficjalnej akcji od Microsoftu i naszego Service Principal (z Zadania 3)
         uses: azure/login@v2
-        with:
-          creds: {
-            "id": ${{ secrets.AZURE_USERNAME }},
-            "password": ${{ secrets.AZURE_PASSWORD }},
-            "tenantId": ${{ secrets.AZURE_TENANT_ID }},
-            "subscriptionId": "1eda8a5b-beaf-4dee-ad9f-8775bf41a043"
-          }
+        with:          
+          id: ${{ secrets.AZURE_USERNAME }},
+          password: ${{ secrets.AZURE_PASSWORD }},
+          tenantId: ${{ secrets.AZURE_TENANT_ID }},
+          subscriptionId: "1eda8a5b-beaf-4dee-ad9f-8775bf41a043"
+          
 
       - name: Instalacja i konfiguracja Terraforma
         uses: hashicorp/setup-terraform@v3
